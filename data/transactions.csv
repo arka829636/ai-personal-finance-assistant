@@ -1,0 +1,10 @@
+date,type,category,description,amount,payment_method
+2026-08-01,Income,Salary,Monthly salary,30000.0,Bank
+2026-08-02,Expense,Food,Lunch,250.0,UPI
+2026-08-03,Expense,Transport,Metro,100.0,UPI
+2026-08-04,Expense,Shopping,Clothes,1500.0,Card
+2026-08-05,Expense,Entertainment,Movie,400.0,UPI
+2026-08-06,Expense,Food,Dinner,350.0,UPI
+2026-08-07,Expense,Education,Course,2000.0,Card
+2026-08-07,Income,Salary,Monthly salary,100000.0,Bank
+2026-08-08,Expense,Food,dinner,455.0,UPI
