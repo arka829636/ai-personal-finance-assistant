@@ -1,10 +1,15 @@
 import streamlit as st
 import pandas as pd
 
-from src.database import get_connection
+from src.database import get_connection, initialize_database
 from src.finance_chat import answer_question
 from src.ai_advisor import generate_advice
 
+# ============================================================
+# DATABASE INITIALIZATION
+# ============================================================
+
+initialize_database()
 
 # ============================================================
 # PAGE CONFIGURATION
