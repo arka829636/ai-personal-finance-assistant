@@ -1,195 +1,188 @@
 # 💰 AI Personal Finance Assistant
 
-A **FinTech-focused personal finance analytics application** built with Python, SQLite, Pandas, Machine Learning, and Streamlit.
+A FinTech-focused personal finance analytics application built with **Python, SQLite, Pandas, Machine Learning, Streamlit, and an LLM-ready Finance Chat architecture**.
 
-The project helps users understand their **income, expenses, savings, budgets, spending patterns, financial recommendations, expense predictions, and unusual spending behavior** through an interactive dashboard.
-
----
+The application helps users understand income, expenses, savings, budgets, spending patterns, financial recommendations, expense prediction, and unusual spending behavior through an interactive dashboard.
 
 ## 📌 Project Status
 
-### Current Stage: Portfolio-Ready MVP + Enhanced UI/UX
+**Current Stage: Portfolio-Ready FinTech MVP + LLM-Ready Finance Chat**
 
-The project currently includes:
+### Implemented
 
 - ✅ SQLite financial database
 - ✅ Transaction management
 - ✅ Budget management
 - ✅ Financial analysis
-- ✅ Income & expense summaries
-- ✅ Savings calculation
-- ✅ Savings-rate analysis
+- ✅ Income and expense summaries
+- ✅ Savings and savings-rate calculation
 - ✅ Spending-by-category analysis
 - ✅ Rule-based financial recommendation engine
-- ✅ AI Financial Advisor module
+- ✅ AI Financial Advisor
 - ✅ Finance Chat Assistant
 - ✅ Machine Learning expense prediction
 - ✅ Spending anomaly detection
 - ✅ Interactive Streamlit dashboard
-- ✅ Premium FinTech-style UI/UX
+- ✅ FinTech-style dark UI/UX
 - ✅ Sidebar navigation
-- ✅ KPI cards
-- ✅ Financial insights
-- ✅ Interactive transaction filtering
-- ✅ Improved chart/card layout
-- ✅ README and project documentation
+- ✅ KPI cards and financial charts
+- ✅ Interactive transaction/budget views
+- ✅ Finance Chat interface
+- ✅ Secure `.env` configuration
+- ✅ LLM client architecture with local Mock LLM mode
 
-The project is intentionally stopped at the **anomaly detection stage** for the current version.
+### Current LLM Mode
 
----
+The project is **LLM-ready** and currently uses:
 
-# 🎯 Objectives
+```env
+MOCK_LLM=true
+```
 
-The main objectives of this project are to:
+This allows development and demonstration without API credits. When live API access is available, the same architecture can switch to live LLM calls through environment configuration.
 
-1. Store financial transactions in a structured database.
+## 🎯 Objectives
+
+1. Store financial transactions in a structured relational database.
 2. Analyze income and expenses.
 3. Calculate savings and savings rate.
 4. Track spending by category.
 5. Compare budgets with actual spending.
-6. Generate personalized financial recommendations.
+6. Generate explainable financial recommendations.
 7. Provide an AI-style financial advisor.
-8. Allow users to ask questions about their transactions.
+8. Allow users to ask questions about their financial data.
 9. Predict future expense behavior using Machine Learning.
-10. Detect unusual spending patterns using anomaly detection.
+10. Detect unusual spending patterns.
 11. Present financial information through a professional dashboard.
+12. Provide an extensible LLM integration layer for natural-language financial assistance.
 
----
-
-# 🏗️ Project Architecture
+## 🏗️ Project Architecture
 
 ```text
-                         ┌──────────────────────────┐
-                         │        User              │
-                         └────────────┬─────────────┘
-                                      │
-                                      ▼
-                    ┌───────────────────────────────┐
-                    │       Streamlit UI            │
-                    │           app.py               │
-                    │                               │
-                    │ Dashboard                     │
-                    │ Transactions                  │
-                    │ Analysis                      │
-                    │ Budget                        │
-                    │ AI Advisor                    │
-                    │ Finance Chat                  │
-                    │ Anomaly Detection             │
-                    └───────────────┬───────────────┘
-                                    │
-                ┌───────────────────┼───────────────────┐
-                │                   │                   │
-                ▼                   ▼                   ▼
-       ┌────────────────┐  ┌────────────────┐  ┌────────────────┐
-       │ SQLite Database│  │ Pandas         │  │ ML / Analytics │
-       │ finance.db     │  │ Data Analysis  │  │ Modules        │
-       └───────┬────────┘  └────────────────┘  └───────┬────────┘
-               │                                        │
-               ▼                                        ▼
-       ┌────────────────┐                     ┌──────────────────┐
-       │ Transactions   │                     │ Expense          │
-       │ Budgets        │                     │ Prediction       │
-       └────────────────┘                     │ Anomaly Detection│
-                                              └──────────────────┘
-                                                        │
-                                                        ▼
-                                           ┌─────────────────────┐
-                                           │ Financial Insights  │
-                                           │ Recommendations     │
-                                           └─────────────────────┘
+                         ┌──────────────┐
+                         │     User     │
+                         └──────┬───────┘
+                                │
+                                ▼
+                    ┌──────────────────────┐
+                    │    Streamlit UI      │
+                    │       app.py         │
+                    └──────────┬───────────┘
+                               │
+              ┌────────────────┼────────────────┐
+              │                │                │
+              ▼                ▼                ▼
+       ┌────────────┐   ┌──────────────┐  ┌───────────────┐
+       │ Dashboard  │   │ Transactions │  │    Budget     │
+       └─────┬──────┘   └──────┬───────┘  └──────┬────────┘
+             │                 │                 │
+             └─────────────────┼─────────────────┘
+                               ▼
+                    ┌──────────────────────┐
+                    │   SQLite Database    │
+                    │    data/finance.db   │
+                    └──────────┬───────────┘
+                               │
+                ┌──────────────┼─────────────────┐
+                │              │                 │
+                ▼              ▼                 ▼
+        ┌─────────────┐ ┌──────────────┐ ┌──────────────────┐
+        │   Pandas    │ │ Rule-Based   │ │ ML / Analytics   │
+        │ Data Analysis│ │ AI Advisor   │ │ Modules          │
+        └──────┬──────┘ └──────┬───────┘ └────────┬─────────┘
+               │               │                  │
+               │               │          ┌───────┴────────┐
+               │               │          ▼                ▼
+               │               │   Expense Prediction  Anomaly Detection
+               │               │
+               └───────────────┼──────────────────────────┐
+                               ▼                          │
+                    ┌──────────────────────┐              │
+                    │    Finance Chat      │◄─────────────┘
+                    │ finance_chat.py      │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │ Financial Summary    │
+                    │ + User Question      │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │     LLM Layer        │
+                    │   llm_client.py      │
+                    ├──────────────────────┤
+                    │ Mock LLM             │
+                    │        OR            │
+                    │ Live OpenAI API      │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    Natural-Language Answer
 ```
 
----
+## 🧩 Main Modules
 
-# 🧩 Main Application Modules
+### 1. 🏠 Dashboard
 
-## 1. Dashboard
-
-The main dashboard provides a quick overview of the user's financial condition.
-
-### Features
+Provides a quick overview of the user's financial condition:
 
 - Total income
 - Total expenses
 - Net savings
 - Savings rate
-- Spending by category
-- Money flow visualization
+- Expenses by category
+- Income vs expenses
 - Highest spending category
-- Financial insights
 - Financial health indicators
-- Premium FinTech dashboard layout
+- KPI cards and FinTech-style layout
 
-The dashboard was upgraded with a **dark FinTech visual theme, gradient hero section, KPI cards, content cards, improved spacing, hover effects, and better visual hierarchy**.
+### 2. 💳 Transactions
 
----
-
-## 2. Transactions
-
-The Transactions section displays stored financial transactions.
-
-### Information includes
+Displays stored financial transactions including:
 
 - Transaction ID
 - Type
 - Category
 - Description
 - Amount
-- Date/payment information where available
 
-### UI improvements
+### 3. 📊 Financial Analysis
 
-The upgraded interface supports easier exploration using filters and search-oriented controls.
-
----
-
-## 3. Financial Analysis
-
-The Analysis section is used to understand spending behavior.
-
-Examples of analysis include:
+Used to understand spending behavior through:
 
 - Category-wise expenses
 - Total income
 - Total expenses
 - Savings
 - Spending distribution
+- Highest spending category
 - Financial summaries
 - Visual charts
 
-Pandas is used to process and aggregate financial data.
+### 4. 💰 Budget Management
 
----
+Compares planned spending with actual spending.
 
-## 4. Budget Analysis
-
-The Budget module compares:
+Budget status:
 
 ```text
-Budget Amount
-      ↓
-Actual Spending
-      ↓
-Remaining Amount
-      ↓
-Budget Status
+🟢 Within Budget
+🟡 Near Limit
+🔴 Over Budget
+⚪ No Budget
 ```
 
-The system can identify categories that are:
+The module calculates:
 
-- 🟢 Within Budget
-- 🟡 Near Limit
-- 🔴 Over Budget
+```text
+Remaining = Budget - Actual Spending
+```
 
-This gives the user a practical way to monitor spending against planned budgets.
+### 5. 🤖 AI Financial Advisor
 
----
-
-# 🤖 5. AI Financial Advisor
-
-The AI Financial Advisor analyzes financial information and provides recommendations.
-
-It considers information such as:
+Provides explainable recommendations based on:
 
 - Income
 - Expenses
@@ -198,57 +191,83 @@ It considers information such as:
 - Highest spending category
 - Spending percentage
 
-The current recommendation logic is primarily **rule-based financial analysis**, making it transparent and easy to explain during an interview.
-
-Example logic:
+Example rule-based logic:
 
 ```text
-Savings Rate >= 30%
-        ↓
-Excellent Savings Rate
-
-Savings Rate >= 20%
-        ↓
-Good Savings Rate
-
-Savings Rate >= 10%
-        ↓
-Moderate Savings Rate
-
-Savings Rate < 10%
-        ↓
-Review Spending
+Savings Rate >= 30% → Excellent
+Savings Rate >= 20% → Good
+Savings Rate >= 10% → Moderate
+Savings Rate < 10%  → Low
 ```
 
----
+The rule-based approach is transparent and easy to explain in an interview.
 
-# 💬 6. Finance Chat Assistant
+### 6. 💬 Finance Chat Assistant
 
-The project includes a Finance Chat component that works with stored financial transaction data.
-
-Users can ask questions related to their financial transactions.
-
-Example questions:
+Users can ask questions such as:
 
 ```text
 How much did I spend?
-
-What is my highest spending category?
-
 How much did I earn?
-
-How much did I save?
+What is my highest spending category?
+What is my savings rate?
+Give me a short summary of my financial situation.
 ```
 
-This module demonstrates the foundation for future **Natural Language → Financial Data Querying** capabilities.
+Flow:
 
----
+```text
+User Question
+      ↓
+finance_chat.py
+      ↓
+SQLite Financial Data
+      ↓
+Financial Summary
+      ↓
+Rule-Based Answer
+      │
+      └── Unsupported question
+                  ↓
+             LLM Layer
+                  ↓
+          Mock / Live LLM
+                  ↓
+          Natural-Language Answer
+```
 
-# 📈 7. Machine Learning Expense Prediction
+Known financial questions are answered deterministically. Broader questions use an aggregated financial summary as LLM context.
 
-The project includes an ML-based expense prediction module.
+### 7. 🧠 LLM Integration Layer
 
-The dataset contains engineered features such as:
+Dedicated files:
+
+```text
+src/llm_client.py
+src/config.py
+```
+
+Environment configuration:
+
+```env
+OPENAI_API_KEY=your_api_key_here
+OPENAI_MODEL=gpt-5.6
+MOCK_LLM=true
+```
+
+`MOCK_LLM=true` enables local development without making an external API request.
+
+When live API access is available:
+
+```env
+MOCK_LLM=false
+```
+
+The source code does not contain the API key.
+
+### 8. 📈 Machine Learning Expense Prediction
+
+The project contains an ML expense prediction module using engineered historical features such as:
 
 ```text
 date
@@ -261,71 +280,34 @@ previous_7_day_expense
 rolling_7_day_avg
 ```
 
-These features are created from historical expense data.
+Feature engineering includes previous-day expense, previous-7-day expense, rolling 7-day average, day of week, day of month, and month.
 
-### Feature Engineering
+### 9. 🚨 Spending Anomaly Detection
 
-Historical transactions are transformed into useful predictive features such as:
+The project contains an **Isolation Forest** anomaly detection module.
 
-- Previous day's expense
-- Previous 7-day expense
-- Rolling 7-day average
-- Day of week
-- Day of month
-- Month
-
-This provides a foundation for predicting future expense behavior.
-
----
-
-# 🚨 8. Spending Anomaly Detection
-
-The project includes a spending anomaly detection module.
-
-Its purpose is to identify transactions that significantly differ from normal spending behavior.
-
-The output classifies transactions into categories such as:
+It identifies transactions that differ significantly from normal spending behavior and can classify transactions as:
 
 ```text
 ✅ Normal
 🚨 Anomaly
 ```
 
-Example:
+The ML logic is kept separately in:
 
 ```text
-Date        Category       Amount       Status
-------------------------------------------------
-2026-05-11  Food           ₹268.33      ✅ Normal
-2026-05-13  Bills          ₹2961.59     🚨 Anomaly
+src/anomaly_detection.py
 ```
 
-The system also reports:
+## 🗄️ Database
 
-- Total expense transactions
-- Number of anomalies
-- All analyzed transactions
-- Category
-- Amount
-- Anomaly status
-
-This is an important FinTech feature because unusual transactions can be flagged for further review.
-
----
-
-# 🗄️ Database
-
-The project uses **SQLite** as the local relational database.
-
-Main database:
+The application uses SQLite:
 
 ```text
 data/finance.db
 ```
 
-The database stores financial information such as:
-
-### Transactions
+Transactions contain fields such as:
 
 ```text
 id
@@ -337,7 +319,7 @@ amount
 payment_method
 ```
 
-### Budgets
+Budgets contain:
 
 ```text
 id
@@ -345,78 +327,23 @@ category
 budget
 ```
 
-SQLite is useful for this project because it is:
+SQLite is lightweight, serverless, SQL-based, and suitable for a local portfolio/MVP application.
 
-- Lightweight
-- Serverless
-- Easy to develop with
-- SQL-based
-- Suitable for a local MVP
+## 🛠️ Technologies Used
 
----
+| Technology | Purpose |
+|---|---|
+| Python | Main programming language |
+| SQLite | Financial data storage |
+| SQL | Database querying |
+| Pandas | Data processing and analysis |
+| Scikit-learn | Machine Learning / anomaly detection |
+| Streamlit | Interactive web dashboard |
+| OpenAI SDK | LLM integration layer |
+| python-dotenv | Environment variable management |
+| Git & GitHub | Version control and hosting |
 
-# 🛠️ Technologies Used
-
-## Programming Language
-
-- **Python**
-
-## Frontend / UI
-
-- **Streamlit**
-- HTML/CSS styling through Streamlit components
-
-## Database
-
-- **SQLite**
-- SQL
-
-## Data Analysis
-
-- **Pandas**
-
-## Machine Learning
-
-- Python ML/data-processing ecosystem
-- Feature engineering for expense prediction
-- Anomaly detection
-
-## Visualization
-
-- Streamlit charting / data visualization
-- Pandas-based analysis
-
-## Development Tools
-
-- Visual Studio Code
-- Python Virtual Environment (`venv`)
-- PowerShell / Terminal
-- Git/GitHub can be used for version control
-
----
-
-# 📦 Python Libraries
-
-The project uses libraries such as:
-
-```text
-streamlit
-pandas
-numpy
-scikit-learn
-```
-
-Additional packages may be present in `requirements.txt` depending on the installed version of the project.
-
-Install dependencies using:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```text
 AI Personal Finance Assistant/
@@ -424,387 +351,116 @@ AI Personal Finance Assistant/
 ├── app.py
 ├── README.md
 ├── requirements.txt
-├── .env
+├── .gitignore
 │
 ├── data/
 │   ├── finance.db
 │   ├── transactions.csv
 │   └── budgets.csv
 │
-├── src/
-│   ├── __init__.py
-│   ├── database.py
-│   ├── analysis.py
-│   ├── budget.py
-│   ├── recommendations.py
-│   ├── ai_advisor.py
-│   ├── finance_chat.py
-│   ├── ml_expense_prediction.py
-│   ├── anomaly_detection.py
-│   ├── transactions.py
-│   ├── utils.py
-│   └── main.py
-│
-└── venv/
+└── src/
+    ├── __init__.py
+    ├── database.py
+    ├── analysis.py
+    ├── budget.py
+    ├── recommendations.py
+    ├── ai_advisor.py
+    ├── finance_chat.py
+    ├── ml_expense_prediction.py
+    ├── anomaly_detection.py
+    ├── transactions.py
+    ├── utils.py
+    ├── main.py
+    ├── config.py
+    └── llm_client.py
 ```
 
----
+`.env` remains local and is excluded from Git.
 
-# ▶️ How to Run
-
-## 1. Open the project folder
-
-```bash
-cd "AI Personal Finance Assistant"
-```
-
-## 2. Activate virtual environment
-
-Windows PowerShell:
+## ▶️ How to Run
 
 ```powershell
-.\venv\Scripts\Activate.ps1
-```
-
-If PowerShell execution policy causes an issue:
-
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
-
-Then:
-
-```powershell
-.\venv\Scripts\Activate.ps1
-```
-
-## 3. Install dependencies
-
-```bash
+git clone https://github.com/arka829636/ai-personal-finance-assistant.git
+cd ai-personal-finance-assistant
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 4. Run database check
+Create a local `.env`:
 
-```bash
-python src/check_database.py
+```env
+OPENAI_API_KEY=your_api_key_here
+OPENAI_MODEL=gpt-5.6
+MOCK_LLM=true
 ```
 
-## 5. Run ML expense prediction
+Run:
 
-```bash
-python src/ml_expense_prediction.py
-```
-
-## 6. Run anomaly detection
-
-```bash
-python src/anomaly_detection.py
-```
-
-## 7. Start Streamlit
-
-```bash
+```powershell
 streamlit run app.py
 ```
 
-The application will open in the browser.
+## 🔐 Security
 
----
+- API keys are loaded through environment variables.
+- `.env` is excluded from Git.
+- API keys are not hard-coded in source files.
+- Production deployment would additionally require authentication, authorization, secure secret management, input validation, database access controls, encryption, API security, logging, and secure financial-data handling.
 
-# 🔐 Security Note
-
-The project is currently designed as a local portfolio/MVP application.
-
-For production deployment, additional security would be required, including:
-
-- Authentication
-- User authorization
-- Secure secret management
-- Input validation
-- Database access controls
-- Encryption
-- API security
-- Logging and monitoring
-- Secure handling of financial data
-
-Do **not** commit real credentials or secrets to GitHub.
-
----
-
-# 🧪 Testing Performed
-
-The project has been tested through:
+## 🧪 Testing Performed
 
 - Database inspection
 - Transaction data verification
 - Budget data verification
-- Streamlit application execution
-- Financial analysis verification
-- ML dataset generation
-- Expense prediction execution
-- Anomaly detection execution
-- UI/UX testing
+- Dashboard execution
+- Financial calculation verification
+- Finance Chat testing
+- Rule-based question testing
+- Mock LLM integration testing
+- Streamlit UI testing
+- Git/GitHub verification
+- `.env` ignore verification
 
-Example database verification:
+## ⚠️ Current Limitations
 
-```bash
-python src/check_database.py
-```
+This is a portfolio/MVP application, not a production banking system.
 
-Example anomaly detection:
+- Local SQLite database
+- No user authentication
+- No multi-user account management
+- Live LLM usage requires API access/credits
+- Mock LLM is used during no-credit development
+- Anomaly detection is implemented as a separate ML module
+- Additional production security would be required
+- Financial recommendations are informational and not professional financial advice
 
-```bash
-python src/anomaly_detection.py
-```
+## 🚀 Future Improvements
 
----
+1. Enable live LLM access when API credits are available.
+2. Improve natural-language financial querying.
+3. Add authentication and user accounts.
+4. Move to PostgreSQL for production use.
+5. Add recurring transaction detection.
+6. Add monthly financial reports.
+7. Add automated budget alerts.
+8. Add richer anomaly explanations.
+9. Add model evaluation for expense prediction.
+10. Add cloud deployment.
+11. Add automated tests and CI/CD.
+12. Add encrypted financial-data storage.
 
-# 💼 Why This Project Is Relevant to FinTech
+## 💼 Resume Description
 
-This project demonstrates several concepts commonly relevant to FinTech applications:
+**AI Personal Finance Assistant | Python, SQLite, Pandas, ML, Streamlit**
 
-### Data Management
+- Built a FinTech-focused personal finance application using Python, SQLite, Pandas and Streamlit to analyze income, expenses, savings, budgets and spending patterns through an interactive dashboard.
+- Implemented ML-based expense prediction, Isolation Forest spending anomaly detection, rule-based financial recommendations and an LLM-ready Finance Chat architecture with secure environment-based API configuration.
 
-```text
-SQLite + SQL
-```
+## 🎤 Interview Summary
 
-### Financial Analytics
+> I built an AI-powered personal finance assistant that stores financial transactions in SQLite, processes them using Pandas, provides financial analytics and recommendations through Streamlit, predicts expense behavior using Machine Learning, detects unusual spending using Isolation Forest, and includes an LLM-ready Finance Chat architecture for natural-language financial queries.
 
-```text
-Income
-Expenses
-Savings
-Budgets
-Spending Categories
-```
+## 📌 Important Note
 
-### Machine Learning
-
-```text
-Expense Prediction
-Anomaly Detection
-Feature Engineering
-```
-
-### Intelligent Systems
-
-```text
-Financial Recommendations
-Finance Chat
-AI Advisor
-```
-
-### Product Development
-
-```text
-Interactive Dashboard
-Data Visualization
-Filtering
-User Experience
-```
-
-Therefore, this is more than a simple CRUD project. It combines:
-
-**Database + Data Analytics + Machine Learning + AI-style Recommendations + FinTech UI/UX.**
-
----
-
-# 🧠 Key Concepts Demonstrated
-
-Through this project, the following concepts are demonstrated:
-
-- Python programming
-- SQL
-- SQLite
-- Database connectivity
-- CRUD/data retrieval
-- Pandas
-- Data cleaning
-- Data aggregation
-- Feature engineering
-- Financial metrics
-- Data visualization
-- Machine Learning
-- Anomaly detection
-- Rule-based recommendation systems
-- Streamlit
-- UI/UX design
-- Modular Python architecture
-
----
-
-# 📊 Current Architecture Flow
-
-```text
-                    USER
-                     │
-                     ▼
-              STREAMLIT APP
-                  app.py
-                     │
-       ┌─────────────┼─────────────┐
-       │             │             │
-       ▼             ▼             ▼
-   Dashboard    Transactions    Analysis
-       │             │             │
-       └─────────────┼─────────────┘
-                     │
-                     ▼
-                DATABASE
-               SQLite DB
-                     │
-          ┌──────────┼──────────┐
-          │          │          │
-          ▼          ▼          ▼
-       Budget    AI Advisor   Finance Chat
-          │          │          │
-          └──────────┼──────────┘
-                     │
-                     ▼
-             DATA PROCESSING
-                  Pandas
-                     │
-            ┌────────┴────────┐
-            ▼                 ▼
-     ML Prediction      Anomaly Detection
-            │                 │
-            └────────┬────────┘
-                     ▼
-              FINANCIAL INSIGHTS
-```
-
----
-
-# 🚀 Future Improvements
-
-The current project stops at the anomaly detection stage.
-
-Possible next stages include:
-
-## Stage 4 — Advanced AI
-
-- LLM integration
-- Natural-language financial analysis
-- Better Finance Chat
-- AI-generated explanations
-- Personalized financial planning
-
-## Stage 5 — Database-Safe AI
-
-```text
-User Question
-      ↓
-Intent Detection
-      ↓
-Safe Query Generation
-      ↓
-SQL Validation
-      ↓
-Database
-      ↓
-Result
-      ↓
-Natural Language Response
-```
-
-## Stage 6 — Production Features
-
-- User authentication
-- Multiple user accounts
-- Personal financial profiles
-- Secure database architecture
-- Cloud deployment
-- API layer
-- Automated testing
-
-## Stage 7 — Advanced FinTech Features
-
-- Recurring expense detection
-- Subscription detection
-- Cash-flow forecasting
-- Financial goal tracking
-- Monthly financial reports
-- Spending alerts
-- Advanced anomaly detection
-- Explainable AI
-- Personalized budget suggestions
-
----
-
-# 🎓 Interview Explanation
-
-### Short Answer
-
-> "I developed an AI-powered personal finance assistant using Python, SQLite, Pandas, Machine Learning and Streamlit. The application stores and analyzes financial transactions, tracks budgets, calculates savings, generates financial recommendations, provides a finance chat interface, predicts expense behavior using engineered time-series features, and detects unusual spending patterns. I also designed a modern FinTech-style Streamlit dashboard for visualization and user interaction."
-
-### If asked about the architecture
-
-> "The Streamlit application acts as the presentation layer. The application communicates with modular Python components for database operations, analysis, budgeting, recommendations, AI advisory, chat, prediction and anomaly detection. SQLite is used as the persistence layer, while Pandas handles data processing and the ML modules perform prediction and anomaly detection."
-
----
-
-# ⭐ Project Highlights
-
-```text
-💰 Personal Finance Management
-📊 Financial Analytics
-💳 Transaction Tracking
-🎯 Budget Monitoring
-🤖 AI Financial Advisor
-💬 Finance Chat
-📈 ML Expense Prediction
-🚨 Anomaly Detection
-🎨 FinTech Dashboard UI/UX
-🗄️ SQLite Database
-🐍 Python
-```
-
----
-
-# 👨‍💻 Project Development Journey
-
-The project evolved progressively:
-
-```text
-Database
-   ↓
-Transaction Management
-   ↓
-Financial Analysis
-   ↓
-Budget Analysis
-   ↓
-Recommendation Engine
-   ↓
-AI Financial Advisor
-   ↓
-Finance Chat
-   ↓
-ML Expense Prediction
-   ↓
-Spending Anomaly Detection
-   ↓
-Streamlit Dashboard
-   ↓
-UI/UX Upgrade — Stage 1
-   ↓
-UI/UX Upgrade — Stage 2
-```
-
----
-
-# 📌 Current Stopping Point
-
-The current version intentionally stops after:
-
-**Spending Anomaly Detection + UI/UX Stage 2**
-
-This provides a strong foundation for the next development phase without unnecessarily increasing project complexity.
-
----
-
-## 📄 License
-
-This project is intended for educational, portfolio, and interview purposes.
+The project currently uses a **local Mock LLM mode** for development because live API access is optional. The architecture is designed so live LLM access can be enabled through environment configuration without changing the core financial-data pipeline.
