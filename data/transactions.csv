@@ -1,10 +1,198 @@
 date,type,category,description,amount,payment_method
-2026-08-01,Income,Salary,Monthly salary,30000.0,Bank
-2026-08-02,Expense,Food,Lunch,250.0,UPI
-2026-08-03,Expense,Transport,Metro,100.0,UPI
-2026-08-04,Expense,Shopping,Clothes,1500.0,Card
-2026-08-05,Expense,Entertainment,Movie,400.0,UPI
-2026-08-06,Expense,Food,Dinner,350.0,UPI
-2026-08-07,Expense,Education,Course,2000.0,Card
-2026-08-07,Income,Salary,Monthly salary,100000.0,Bank
-2026-08-08,Expense,Food,dinner,455.0,UPI
+2026-08-02,Expense,Food,Lunch,163.26,UPI
+2026-08-03,Expense,Transport,Metro,65.3,UPI
+2026-08-04,Expense,Shopping,Clothes,979.56,Card
+2026-08-05,Expense,Entertainment,Movie,261.22,UPI
+2026-08-06,Expense,Food,Dinner,228.56,UPI
+2026-08-07,Expense,Education,Course,1306.08,Card
+2026-08-08,Expense,Food,dinner,297.13,UPI
+2026-08-08,Expense,Food,Coffee,65.3,UPI
+2026-05-03,Expense,Entertainment,Entertainment expense,107.52,Card
+2026-05-04,Expense,Food,Food expense,127.98,UPI
+2026-05-04,Expense,Food,Food expense,307.44,Bank
+2026-05-05,Expense,Entertainment,Entertainment expense,635.42,Cash
+2026-05-06,Expense,Education,Education expense,247.48,UPI
+2026-05-06,Expense,Healthcare,Healthcare expense,152.71,UPI
+2026-05-07,Expense,Transport,Transport expense,197.28,Cash
+2026-05-08,Expense,Food,Food expense,306.81,Card
+2026-05-09,Expense,Entertainment,Entertainment expense,378.23,Cash
+2026-05-10,Expense,Food,Food expense,463.99,Cash
+2026-05-11,Expense,Transport,Transport expense,175.23,UPI
+2026-05-11,Expense,Shopping,Shopping expense,738.09,Bank
+2026-05-11,Expense,Transport,Transport expense,222.14,Cash
+2026-05-12,Expense,Transport,Transport expense,146.14,Cash
+2026-05-12,Expense,Bills,Bills expense,811.83,Cash
+2026-05-13,Expense,Bills,Bills expense,1934.04,Card
+2026-05-13,Expense,Transport,Transport expense,93.82,Cash
+2026-05-14,Expense,Education,Education expense,1203.14,UPI
+2026-05-14,Expense,Entertainment,Entertainment expense,605.53,Bank
+2026-05-14,Expense,Entertainment,Entertainment expense,782.62,Card
+2026-05-15,Expense,Transport,Transport expense,308.0,Cash
+2026-05-15,Expense,Transport,Transport expense,299.97,Bank
+2026-05-16,Expense,Bills,Bills expense,470.14,Cash
+2026-05-16,Expense,Transport,Transport expense,153.33,UPI
+2026-05-16,Expense,Entertainment,Entertainment expense,430.94,Cash
+2026-05-17,Expense,Bills,Bills expense,1703.5,Card
+2026-05-17,Expense,Education,Education expense,1174.19,Cash
+2026-05-18,Expense,Shopping,Shopping expense,1245.13,Cash
+2026-05-18,Expense,Transport,Transport expense,110.12,Bank
+2026-05-18,Expense,Food,Food expense,167.56,UPI
+2026-05-19,Expense,Healthcare,Healthcare expense,449.21,Cash
+2026-05-19,Expense,Entertainment,Entertainment expense,361.81,Card
+2026-05-20,Expense,Education,Education expense,694.61,UPI
+2026-05-20,Expense,Shopping,Shopping expense,509.56,Cash
+2026-05-21,Expense,Transport,Transport expense,144.47,Card
+2026-05-22,Expense,Shopping,Shopping expense,1049.15,Bank
+2026-05-22,Expense,Bills,Bills expense,212.29,Card
+2026-05-22,Expense,Healthcare,Healthcare expense,567.28,Cash
+2026-05-23,Expense,Healthcare,Healthcare expense,228.84,Bank
+2026-05-24,Expense,Shopping,Shopping expense,993.45,Bank
+2026-05-24,Expense,Bills,Bills expense,205.35,Bank
+2026-05-25,Expense,Bills,Bills expense,1390.91,Bank
+2026-05-25,Expense,Education,Education expense,654.3,Cash
+2026-05-26,Expense,Healthcare,Healthcare expense,900.69,Cash
+2026-05-27,Expense,Food,Food expense,68.59,Card
+2026-05-27,Expense,Shopping,Shopping expense,1140.42,Card
+2026-05-28,Expense,Education,Education expense,479.66,Card
+2026-05-28,Expense,Shopping,Shopping expense,464.48,Cash
+2026-05-29,Expense,Education,Education expense,1015.5,UPI
+2026-05-29,Expense,Shopping,Shopping expense,407.63,Bank
+2026-05-29,Expense,Bills,Bills expense,1334.32,Bank
+2026-05-30,Expense,Entertainment,Entertainment expense,318.48,Card
+2026-05-30,Expense,Food,Food expense,454.78,Bank
+2026-05-30,Expense,Shopping,Shopping expense,1545.63,UPI
+2026-05-31,Expense,Entertainment,Entertainment expense,669.78,Bank
+2026-05-31,Expense,Entertainment,Entertainment expense,195.25,Bank
+2026-06-01,Expense,Healthcare,Healthcare expense,952.04,Card
+2026-06-01,Expense,Transport,Transport expense,325.76,UPI
+2026-06-02,Expense,Entertainment,Entertainment expense,286.06,Card
+2026-06-02,Expense,Education,Education expense,594.94,UPI
+2026-06-03,Expense,Education,Education expense,578.75,Bank
+2026-06-04,Expense,Healthcare,Healthcare expense,734.54,Bank
+2026-06-04,Expense,Shopping,Shopping expense,639.24,Cash
+2026-06-05,Expense,Healthcare,Healthcare expense,929.41,Cash
+2026-06-05,Expense,Healthcare,Healthcare expense,65.89,UPI
+2026-06-06,Expense,Transport,Transport expense,262.08,Cash
+2026-06-07,Expense,Entertainment,Entertainment expense,227.13,UPI
+2026-06-07,Expense,Food,Food expense,475.26,Card
+2026-06-07,Expense,Healthcare,Healthcare expense,401.32,Cash
+2026-06-08,Expense,Healthcare,Healthcare expense,716.64,Card
+2026-06-08,Expense,Entertainment,Entertainment expense,585.08,Bank
+2026-06-09,Expense,Bills,Bills expense,663.77,UPI
+2026-06-09,Expense,Education,Education expense,316.87,UPI
+2026-06-09,Expense,Entertainment,Entertainment expense,143.62,Cash
+2026-06-10,Expense,Food,Food expense,205.04,Card
+2026-06-10,Expense,Education,Education expense,472.43,UPI
+2026-06-11,Expense,Entertainment,Entertainment expense,747.78,Card
+2026-06-12,Expense,Shopping,Shopping expense,764.11,Bank
+2026-06-12,Expense,Food,Food expense,246.63,Cash
+2026-06-13,Expense,Food,Food expense,188.77,UPI
+2026-06-13,Expense,Bills,Bills expense,912.91,Cash
+2026-06-14,Expense,Food,Food expense,138.23,UPI
+2026-06-14,Expense,Entertainment,Entertainment expense,413.99,Bank
+2026-06-15,Expense,Healthcare,Healthcare expense,679.15,Bank
+2026-06-15,Expense,Food,Food expense,443.48,Cash
+2026-06-15,Expense,Healthcare,Healthcare expense,647.4,Bank
+2026-06-16,Expense,Transport,Transport expense,102.77,Card
+2026-06-16,Expense,Transport,Transport expense,190.24,Bank
+2026-06-16,Expense,Transport,Transport expense,242.96,Card
+2026-06-17,Expense,Healthcare,Healthcare expense,297.49,Card
+2026-06-17,Expense,Healthcare,Healthcare expense,891.05,Card
+2026-06-18,Expense,Entertainment,Entertainment expense,347.18,Cash
+2026-06-19,Expense,Healthcare,Healthcare expense,311.57,Bank
+2026-06-19,Expense,Food,Food expense,67.36,UPI
+2026-06-19,Expense,Shopping,Shopping expense,707.06,Bank
+2026-06-20,Expense,Food,Food expense,184.14,Card
+2026-06-21,Expense,Bills,Bills expense,208.97,Cash
+2026-06-21,Expense,Healthcare,Healthcare expense,379.57,Bank
+2026-06-22,Expense,Shopping,Shopping expense,229.54,Bank
+2026-06-23,Expense,Food,Food expense,114.2,UPI
+2026-06-24,Expense,Education,Education expense,822.35,Cash
+2026-06-24,Expense,Bills,Bills expense,1443.96,Bank
+2026-06-24,Expense,Healthcare,Healthcare expense,86.16,Cash
+2026-06-25,Expense,Food,Food expense,339.79,UPI
+2026-06-25,Expense,Food,Food expense,455.07,Card
+2026-06-25,Expense,Bills,Bills expense,1832.31,Card
+2026-06-26,Expense,Entertainment,Entertainment expense,367.2,UPI
+2026-06-26,Expense,Shopping,Shopping expense,324.26,Bank
+2026-06-27,Expense,Food,Food expense,374.5,UPI
+2026-06-27,Expense,Shopping,Shopping expense,334.4,UPI
+2026-06-28,Expense,Healthcare,Healthcare expense,660.46,UPI
+2026-06-28,Expense,Food,Food expense,244.07,UPI
+2026-06-29,Expense,Food,Food expense,97.61,Card
+2026-06-30,Expense,Bills,Bills expense,1367.13,Cash
+2026-06-30,Expense,Education,Education expense,1234.9,Bank
+2026-07-01,Expense,Food,Food expense,348.04,Cash
+2026-07-02,Expense,Entertainment,Entertainment expense,507.98,Bank
+2026-07-03,Expense,Food,Food expense,386.5,UPI
+2026-07-03,Expense,Entertainment,Entertainment expense,221.47,UPI
+2026-07-03,Expense,Shopping,Shopping expense,327.85,Bank
+2026-07-04,Expense,Shopping,Shopping expense,1139.46,UPI
+2026-07-04,Expense,Food,Food expense,461.53,Bank
+2026-07-04,Expense,Entertainment,Entertainment expense,379.73,UPI
+2026-07-05,Expense,Entertainment,Entertainment expense,526.16,Cash
+2026-07-05,Expense,Entertainment,Entertainment expense,484.07,UPI
+2026-07-06,Expense,Transport,Transport expense,132.36,Bank
+2026-07-06,Expense,Healthcare,Healthcare expense,134.79,Cash
+2026-07-06,Expense,Food,Food expense,160.97,Bank
+2026-07-07,Expense,Education,Education expense,680.4,Card
+2026-07-07,Expense,Transport,Transport expense,80.53,Bank
+2026-07-07,Expense,Food,Food expense,209.13,Cash
+2026-07-08,Expense,Healthcare,Healthcare expense,387.05,Card
+2026-07-09,Expense,Shopping,Shopping expense,466.79,UPI
+2026-07-09,Expense,Entertainment,Entertainment expense,382.11,Cash
+2026-07-10,Expense,Transport,Transport expense,219.2,Bank
+2026-07-10,Expense,Bills,Bills expense,1623.16,Bank
+2026-07-10,Expense,Shopping,Shopping expense,240.76,Cash
+2026-07-11,Expense,Bills,Bills expense,434.86,Cash
+2026-07-11,Expense,Education,Education expense,1193.99,Card
+2026-07-11,Expense,Shopping,Shopping expense,364.74,Cash
+2026-07-12,Expense,Entertainment,Entertainment expense,434.16,Cash
+2026-07-12,Expense,Shopping,Shopping expense,822.3,Bank
+2026-07-13,Expense,Shopping,Shopping expense,653.82,Cash
+2026-07-14,Expense,Food,Food expense,483.14,UPI
+2026-07-14,Expense,Healthcare,Healthcare expense,81.58,UPI
+2026-07-14,Expense,Healthcare,Healthcare expense,319.57,UPI
+2026-07-15,Expense,Transport,Transport expense,129.34,Cash
+2026-07-15,Expense,Shopping,Shopping expense,190.22,UPI
+2026-07-16,Expense,Healthcare,Healthcare expense,517.29,Card
+2026-07-16,Expense,Food,Food expense,176.75,Bank
+2026-07-16,Expense,Food,Food expense,351.43,UPI
+2026-07-17,Expense,Food,Food expense,275.02,Card
+2026-07-17,Expense,Education,Education expense,1276.65,Card
+2026-07-17,Expense,Healthcare,Healthcare expense,852.51,UPI
+2026-07-18,Expense,Food,Food expense,507.1,UPI
+2026-07-18,Expense,Healthcare,Healthcare expense,298.09,Bank
+2026-07-18,Expense,Education,Education expense,1009.87,Bank
+2026-07-19,Expense,Food,Food expense,201.99,UPI
+2026-07-19,Expense,Education,Education expense,493.94,Card
+2026-07-20,Expense,Entertainment,Entertainment expense,717.74,UPI
+2026-07-20,Expense,Bills,Bills expense,988.49,UPI
+2026-07-20,Expense,Education,Education expense,422.97,UPI
+2026-07-21,Expense,Transport,Transport expense,315.24,Bank
+2026-07-21,Expense,Food,Food expense,325.35,Cash
+2026-07-22,Expense,Shopping,Shopping expense,807.78,Bank
+2026-07-22,Expense,Education,Education expense,1248.4,Card
+2026-07-22,Expense,Food,Food expense,132.36,Cash
+2026-07-23,Expense,Transport,Transport expense,231.88,UPI
+2026-07-24,Expense,Bills,Bills expense,401.82,Card
+2026-07-24,Expense,Food,Food expense,80.18,Bank
+2026-07-25,Expense,Healthcare,Healthcare expense,806.83,Cash
+2026-07-25,Expense,Education,Education expense,736.18,Card
+2026-07-26,Expense,Shopping,Shopping expense,1621.98,Cash
+2026-07-26,Expense,Bills,Bills expense,645.02,Cash
+2026-07-27,Expense,Bills,Bills expense,1824.05,UPI
+2026-07-27,Expense,Entertainment,Entertainment expense,330.02,Bank
+2026-07-27,Expense,Shopping,Shopping expense,1181.36,UPI
+2026-07-28,Expense,Entertainment,Entertainment expense,542.89,Cash
+2026-07-28,Expense,Healthcare,Healthcare expense,365.22,Card
+2026-07-29,Expense,Education,Education expense,1023.79,Cash
+2026-07-30,Expense,Shopping,Shopping expense,1385.52,Cash
+2026-07-31,Expense,Transport,Transport expense,320.71,UPI
+2026-07-31,Expense,Education,Education expense,1019.46,Card
+2026-09-21,Expense,Entertainment,OTT,130.7,UPI
+2026-05-15,Income,Salary,May Salary,20000.0,Bank Transfer
+2026-06-15,Income,Salary,June Salary,23000.0,Bank Transfer
+2026-07-15,Income,Salary,July Salary,25000.0,Bank Transfer
+2026-08-15,Income,Salary,August Salary,32000.0,Bank Transfer
+2026-09-15,Income,Salary,September Salary,30000.0,Bank Transfer
