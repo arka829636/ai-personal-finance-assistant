@@ -1,53 +1,89 @@
-# 💰 FinanceAI — AI Personal Finance Assistant
+# 💰 AI Personal Finance Assistant
 
-FinanceAI is a personal finance analytics application built with **Python and Streamlit**. It combines transaction management, financial analytics, budgeting, machine learning, anomaly detection, rule-based intent detection, and an LLM integration layer into a single interactive application.
+An AI-powered personal finance analytics platform built with Python and Streamlit that helps users track transactions, analyze spending, manage budgets, predict future expenses, detect unusual spending patterns, and interact with their financial data through a natural-language Finance Chat interface.
 
-The project is designed as a practical **FinTech / Data Analytics / AI portfolio project**.
+The project combines:
+
+- Financial analytics
+- SQL and database management
+- Machine Learning
+- Anomaly Detection
+- Rule-based financial intelligence
+- Natural Language Processing
+- LLM integration
+- Interactive data visualization
+- Streamlit deployment
+
+It is designed as a practical **AI / Machine Learning / FinTech portfolio project**.
 
 ---
 
 ## 🚀 Live Demo
 
-🌐 **Streamlit App:**  
-https://https://ai-personal-finance-assistantt.streamlit.app//
+🌐 **Live Application**
 
-📂 **GitHub Repository:**  
+https://ai-personal-finance-assistantt.streamlit.app/
+
+> Replace `YOUR_NEW_STREAMLIT_URL` with the exact Streamlit URL of the current deployment.
+
+📂 **GitHub Repository**
+
 https://github.com/arka829636/ai-personal-finance-assistant
 
 ---
 
-## 📌 Project Overview
+# 📌 Project Overview
 
-FinanceAI helps users understand their financial activity through:
+The AI Personal Finance Assistant provides a unified platform for personal financial management.
 
-- Income and expense tracking
-- Interactive financial dashboards
-- Category-wise spending analysis
-- Budget monitoring
-- Financial recommendations
-- Expense prediction using Machine Learning
-- Unusual transaction detection
-- Natural-language Finance Chat
-- LLM integration for general financial questions
-- SQLite-based transaction storage
+Instead of maintaining separate applications for transactions, analysis, budgets, and financial insights, this project combines them into one interactive system.
 
-The application uses a layered architecture where the Streamlit interface communicates with analytics, database, machine learning, and AI components.
+The application allows users to:
+
+- Track income and expenses
+- Add, edit, and delete transactions
+- Analyze spending patterns
+- Monitor budgets
+- Receive rule-based financial recommendations
+- Predict future expenses using Machine Learning
+- Detect unusual spending using Anomaly Detection
+- Ask financial questions using natural language
+- Use an LLM integration layer for general financial questions
+- Visualize financial information through interactive charts
 
 ---
 
-# ✨ Features
+# 🎯 Project Objectives
 
-## 🏠 Dashboard
+The main objectives of the project are:
 
-The dashboard provides a quick overview of the user's financial position.
+1. Build a practical personal finance management application.
+2. Apply SQL and database concepts to real-world financial data.
+3. Use Pandas for financial data analysis.
+4. Apply Machine Learning for expense prediction.
+5. Apply unsupervised learning for anomaly detection.
+6. Implement natural-language intent detection.
+7. Integrate an LLM layer into a financial application.
+8. Build an interactive FinTech-style user interface.
+9. Deploy the application using Streamlit Community Cloud.
+10. Create a project suitable for AI/ML/Data Analytics interviews.
 
-### Key Metrics
+---
+
+# ✨ Key Features
+
+## 🏠 1. Dashboard
+
+The Dashboard provides a high-level overview of the user's financial condition.
+
+### Key Performance Indicators
 
 - Total Income
 - Total Expenses
 - Savings
 - Savings Rate
 - Number of Transactions
+- Number of Expense Transactions
 - Average Expense
 - Top Spending Category
 
@@ -57,117 +93,57 @@ The dashboard provides a quick overview of the user's financial position.
 - Category-wise expenses
 - Spending distribution
 - Financial KPI cards
+- Expense trends
 
 ---
 
-## 💳 Transaction Management
+# 💳 2. Transaction Management
 
-FinanceAI provides complete CRUD functionality for financial transactions.
+The Transactions module provides complete CRUD functionality.
 
-### Supported Operations
+## CRUD Operations
 
-- Add transaction
-- View transactions
-- Edit transaction
-- Delete transaction
+### Create
+Add a new financial transaction.
+
+### Read
+View and filter existing transactions.
+
+### Update
+Edit an existing transaction.
+
+### Delete
+Remove a transaction.
 
 ### Transaction Fields
 
-- Date
-- Type
-- Category
-- Description
-- Amount
-- Payment Method
+| Field | Description |
+|---|---|
+| ID | Unique transaction identifier |
+| Date | Transaction date |
+| Type | Income / Expense |
+| Category | Food, Shopping, Education, etc. |
+| Description | Transaction description |
+| Amount | Transaction amount |
+| Payment Method | UPI, Cash, Bank Transfer, etc. |
 
-All transaction data is stored in a SQLite database.
-
----
-
-## 📊 Financial Analysis
-
-The Analysis module provides deeper insights into spending behavior.
-
-### Metrics
-
-- Total income
-- Total expenses
-- Net savings
-- Savings rate
-- Category-wise spending
-
-### Analysis
-
-- Expense distribution
-- Monthly income vs expense
-- Spending categories
-- Highest spending category
+The transaction data is stored in SQLite.
 
 ---
 
-## 💰 Budget Management
+# 🗄️ 3. Database Layer
 
-The Budget module compares planned budgets with actual spending.
+The project uses **SQLite** as the relational database.
 
-### Features
+## Database Table
 
-- Category-wise budget
-- Actual spending
-- Remaining budget
-- Budget utilization
-- Budget status
-
-### Budget Status
-
-Transactions can be classified as:
-
-- Within Budget
-- Near Limit
-- Over Budget
-
-The project also includes intentional monthly demo scenarios to demonstrate budget-overrun handling.
-
----
-
-## 🤖 AI Advisor
-
-The AI Advisor provides rule-based financial recommendations using the user's stored financial data.
-
-Examples include:
-
-- High spending categories
-- Budget utilization
-- Savings performance
-- Average expense
-- Areas where spending can be reviewed
-
-The recommendations are generated from actual application data rather than hard-coded financial advice.
-
----
-
-# 🧠 Machine Learning
-
-FinanceAI contains two machine learning components.
-
-## 1. Expense Prediction
-
-A **Random Forest Regressor** is used to estimate the next day's expense.
-
-### Features
-
-The model uses:
-
-- Day of week
-- Day of month
-- Month
-- Previous day's expense
-- Previous seven-transaction expense total
-- Rolling seven-transaction average
-
-### Model
-
-```text
-RandomForestRegressor
-├── n_estimators = 200
-├── max_depth = 8
-└── random_state = 42
+```sql
+transactions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date TEXT NOT NULL,
+    type TEXT NOT NULL,
+    category TEXT NOT NULL,
+    description TEXT,
+    amount REAL NOT NULL,
+    payment_method TEXT
+)
