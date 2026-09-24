@@ -9,7 +9,7 @@ The project is designed as a practical **FinTech / Data Analytics / AI portfolio
 ## 🚀 Live Demo
 
 🌐 **Streamlit App:**  
-https://ai-personal-finance-assistant.streamlit.app/
+https://https://ai-personal-finance-assistantt.streamlit.app//
 
 📂 **GitHub Repository:**  
 https://github.com/arka829636/ai-personal-finance-assistant
